@@ -18,8 +18,11 @@
  * ----------------------------------------------------------
  */
 int powerN(int base, int exp) {
-
-    return 0;
+    if (exp == 0) {
+        return 1;
+    } else {
+        return base * powerN(base, exp - 1);
+    }
 }
 
 /** ----------------------------------------------------------
@@ -31,8 +34,22 @@ int powerN(int base, int exp) {
  * ----------------------------------------------------------
  */
 int count_char(char str[], char c) {
+    // Recursively count the number of characters in str[] that match c
 
-    return 0;
+    // Base case:  if the string is empty, return 0
+    if (str[0] == '\0') {
+        return 0;
+    }
+
+    // Recursive case:  if the first character matches c, return 1 + the number of
+    // characters in the rest of the string that match c
+    if (str[0] == c) {
+        return 1 + count_char(str + 1, c);
+    }
+
+    // Recursive case:  if the first character does not match c, return the number of
+    // characters in the rest of the string that match c
+    return count_char(str + 1, c);
 }
 
 /** ----------------------------------------------------------
@@ -45,8 +62,23 @@ int count_char(char str[], char c) {
  * ----------------------------------------------------------
  */
 int count_num(int array[], int x, int len) {
+    // Recursively count the number of times x appears in array
 
-    return 0;
+    // Base case:  if the array is empty, return 0
+    if (len == 0) {
+        return 0;
+    }
+
+    // Recursive case:  if the first element matches x, return 1 + the number of
+    // times x appears in the rest of the array
+    if (array[0] == x) {
+        return 1 + count_num(array + 1, x, len - 1);
+    }
+
+    // Recursive case:  if the first element does not match x, return the number of
+    // times x appears in the rest of the array
+    return count_num(array + 1, x, len - 1);
+
 }
 
 /** ----------------------------------------------------------
@@ -57,8 +89,18 @@ int count_num(int array[], int x, int len) {
  * ----------------------------------------------------------
  */
 void reverse_print(char str[]) {
+    // Recursively print a string in reverse
 
-    // TODO:  Add Your Code Here
+    // Base case:  if the string is empty, return
+    if (str[0] == '\0') {
+        return;
+    }
+
+    // Recursive case:  print the rest of the string in reverse
+    reverse_print(str + 1);
+
+    // Recursive case:  print the first character
+    printf("%c", str[0]);
 }
 
 /** ----------------------------------------------------------
@@ -69,6 +111,6 @@ void reverse_print(char str[]) {
  * ----------------------------------------------------------
  */
  int fibonacci(int N) {
-    
+
     return 0;
  }
