@@ -110,7 +110,19 @@ void reverse_print(char str[]) {
  * @return the int value of fibonacci(N)
  * ----------------------------------------------------------
  */
- int fibonacci(int N) {
+int fibonacci(int N) {
+    // Recursively calculate the value of fibonacci at N
 
-    return 0;
- }
+    // Base case:  if N is 0, return 0
+    if (N == 0) {
+        return 0;
+    }
+
+    // Base case:  if N is 1, return 1
+    if (N == 1) {
+        return 1;
+    }
+
+    // Recursive case:  return the sum of fibonacci(N-1) and fibonacci(N-2)
+    return fibonacci(N - 1) + fibonacci(N - 2);
+}
